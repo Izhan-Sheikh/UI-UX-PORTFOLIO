@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Izhan Sheikh | UI/UX Designer</title>
+  <link rel="icon" href="img/favicon-16x16.png" type="image/x-icon" />
+
+  <link rel="stylesheet" href="style.css">
+  <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+</head>
+<body>
+
+    <section class="hero fade-in">
+        <div class="hero-content">
+          <h1>Hello, I'm <span class="highlight">Izhan Sheikh</span></h1>
+          <p>UI/UX Designer & Developer. Creating seamless digital experiences.</p>
+          <a href="#about" class="cta">Veiw My Work</a>
+        </div>
+      </section>
+      
+
+      <section class="about fade-in" id="about">
+        <div class="container">
+          <h2 class="section-title">About Me</h2>
+          <div class="about-content">
+            <div class="about-text">
+              <p>
+                I'm a UI/UX designer with a passion for creating elegant, human-centered digital experiences.
+              </p>
+              <p>
+                With tools like <strong>Figma</strong> I design products that not only look good but feel intuitive and engaging.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+
+  <!-- Portfolio Section -->
+  <section class="portfolio fade-in"  id="portfolio">
+    <div class="container">
+      <h2 class="section-title">My Work</h2>
+      <div class="gallery-grid">
+        <div class="gallery-item" data-full="img/1.png" data-title="Project Title">
+          <img src="img/1.png" alt="Design 1">
+          <div class="card-content">
+            <h3>Mobile Application</h3>
+            <a href="javascript:void(0)" class="view-design">View Design</a>
+          </div>
+        </div>
+        <div class="gallery-item" data-full="img/2.png" data-title="App UI Concept">
+          <img src="img/2.png" alt="Design 2">
+          <div class="card-content">
+            <h3>Website Landing Page</h3>
+            <a href="javascript:void(0)" class="view-design">View Design</a>
+          </div>
+        </div>
+        <div class="gallery-item" data-full="img/3.png" data-title="Landing Page">
+          <img src="img/3.png" alt="Design 3">
+          <div class="card-content">
+            <h3>CCTV Website landing Page</h3>
+            <a href="javascript:void(0)" class="view-design">View Design</a>
+          </div>
+        </div>
+        <div class="gallery-item" data-full="img/4.png" data-title="E-Commerce Website">
+          <img src="img/4(4).png" alt="Design 4">
+          <div class="card-content">
+            <h3>E-Commerce Application</h3>
+            <a href="javascript:void(0)" class="view-design">View Design</a>
+          </div>
+        </div>
+        <div class="gallery-item" data-full="img/5.png" data-title="Mobile App Design">
+          <img src="img/5.png" alt="Design 5">
+          <div class="card-content">
+            <h3>Pizza Website</h3>
+            <a href="javascript:void(0)" class="view-design">View Design</a>
+          </div>
+        </div>
+        <div class="gallery-item" data-full="img/7.png" data-title="Brand Identity">
+          <img src="img/7.png" alt="Design 7">
+          <div class="card-content">
+            <h3>Music Application</h3>
+            <a href="javascript:void(0)" class="view-design">View Design</a>
+          </div>
+        </div>
+        <div class="gallery-item" data-full="img/8.png" data-title="E-Commerce Website">
+            <img src="img/8.png" alt="Design 4">
+            <div class="card-content">
+              <h3>E-Commerce Application</h3>
+              <a href="javascript:void(0)" class="view-design">View Design</a>
+            </div>
+          </div>
+          <div class="gallery-item" data-full="img/9.png" data-title="E-Commerce Website">
+            <img src="img/99.png" alt="Design 4">
+            <div class="card-content">
+              <h3>E-Wallet</h3>
+              <a href="javascript:void(0)" class="view-design">View Design</a>
+            </div>
+          </div>
+          <div class="gallery-item" data-full="img/10.png" data-title="E-Commerce Website">
+            <img src="img/1010.png" alt="Design 4">
+            <div class="card-content">
+              <h3>Messenger</h3>
+              <a href="javascript:void(0)" class="view-design">View Design</a>
+            </div>
+          </div>
+      </div>
+    </div>
+   
+  </section>
+
+  <!-- Contact Section -->
+<section class="contact fade-in" id="contact">
+    <div class="container contact-container">
+      <h2 class="section-title">Let's Work Together</h2>
+      <p class="contact-subtext">Got a project or just want to say hey? Drop me a message!</p>
+  
+      <form class="contact-form" action="#" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+        <button type="submit" class="contact-btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+  
+
+  <!-- Modal Popup for Image View -->
+  <div class="modal" id="modal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-img" id="modalImg" src="" alt="">
+    <h3 class="modal-title" id="modalTitle"></h3>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const modal = document.getElementById("modal");
+      const modalImg = document.getElementById("modalImg");
+      const modalTitle = document.getElementById("modalTitle");
+      const modalClose = document.getElementById("modalClose");
+      const galleryItems = document.querySelectorAll(".gallery-item");
+
+      galleryItems.forEach(item => {
+        item.addEventListener("click", function () {
+          const imgSrc = this.getAttribute("data-full");
+          const title = this.getAttribute("data-title");
+
+          modalImg.src = imgSrc;
+          modalTitle.textContent = title;
+          modal.style.display = "flex";
+        });
+      });
+
+      modalClose.addEventListener("click", function () {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    });
+  </script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const fadeElements = document.querySelectorAll('.fade-in');
+  
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('show');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+  
+      fadeElements.forEach(el => observer.observe(el));
+    });
+  </script>
+  
+
+  <!-- Footer -->
+<footer class="footer fade-in">
+    <div class="container footer-container">
+      <div class="footer-brand">
+        <h3>Izhan Sheikh</h3>
+        <p>Designing clean, intuitive, user-first experiences.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Work</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-social">
+        <h4>Connect</h4>
+        <div class="social-icons">
+          <a href="#" target="_blank"><i class="fab fa-behance"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-dribbble"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </div>
+  </footer>
+  
+
+</body>
+</html>
