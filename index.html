@@ -147,16 +147,19 @@
       const modalClose = document.getElementById("modalClose");
       const galleryItems = document.querySelectorAll(".gallery-item");
 
-      galleryItems.forEach(item => {
-        item.addEventListener("click", function () {
-          const imgSrc = this.getAttribute("data-full");
-          const title = this.getAttribute("data-title");
+      document.querySelectorAll(".view-design").forEach(button => {
+  button.addEventListener("click", function (e) {
+    e.stopPropagation(); // Prevent bubbling if needed
+    const galleryItem = this.closest(".gallery-item");
+    const imgSrc = galleryItem.getAttribute("data-full");
+    const title = galleryItem.getAttribute("data-title");
 
-          modalImg.src = imgSrc;
-          modalTitle.textContent = title;
-          modal.style.display = "flex";
-        });
-      });
+    modalImg.src = imgSrc;
+    modalTitle.textContent = title;
+    modal.style.display = "flex";
+  });
+});
+
 
       modalClose.addEventListener("click", function () {
         modal.style.display = "none";
