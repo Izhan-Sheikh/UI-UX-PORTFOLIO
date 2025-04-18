@@ -1,0 +1,45 @@
+/* Hero buttons visibility fix */
+.hero-btns {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 20px !important;
+  margin-top: 40px !important;
+  z-index: 9999 !important;
+  position: relative !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.cta, .cta-secondary {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  z-index: 9999 !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  text-decoration: none !important;
+}
+
+.cta {
+  background: #6C63FF !important;
+  color: white !important;
+  padding: 16px 35px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 10px 20px rgba(108, 99, 255, 0.2) !important;
+}
+
+.cta-secondary {
+  background: rgba(108, 99, 255, 0.1) !important;
+  color: #6C63FF !important;
+  padding: 16px 35px !important;
+  border-radius: 50px !important;
+  font-weight: 600 !important;
+  box-shadow: 0 5px 15px rgba(108, 99, 255, 0.1) !important;
+}
+
+.cta i, .cta-secondary i {
+  margin-left: 8px !important;
+  display: inline-block !important;
+} 
