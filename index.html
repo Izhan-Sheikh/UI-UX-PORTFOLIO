@@ -307,11 +307,11 @@
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2024 Izhan Sheikh. All rights reserved.</p>
+      <p>&copy; 2025 Izhan Sheikh. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- JavaScript -->
+
   <script>
     console.log("Main script executing");
     
@@ -328,25 +328,25 @@
         console.log("Portfolio visibility:", getComputedStyle(portfolio).visibility);
         console.log("Portfolio opacity:", getComputedStyle(portfolio).opacity);
         
-        // Force visibility
+   
         portfolio.style.display = 'block';
         portfolio.style.visibility = 'visible';
         portfolio.style.opacity = '1';
       }
       
-      // Force gallery items to be visible
+     
       galleryItems.forEach(item => {
         item.style.opacity = '1';
         item.style.transform = 'translateY(0)';
       });
     }
     
-    // Run visibility check after DOM is loaded and then again after delay
+    
     document.addEventListener("DOMContentLoaded", function() {
       console.log("DOM fully loaded");
       checkPortfolioVisibility();
       
-      // Check again after a short delay
+      
       setTimeout(checkPortfolioVisibility, 1000);
     });
     
@@ -360,9 +360,9 @@
         loader.classList.add('loaded');
         document.body.classList.remove('loading');
         
-        // Check portfolio visibility after loader is removed
+        
         setTimeout(checkPortfolioVisibility, 500);
-      }, 1000); // Reduced loader time for better UX
+      }, 1000); 
     });
     
     // Navigation scroll effect
@@ -396,7 +396,7 @@
           modalTitle.textContent = title;
           modal.style.display = "flex";
           
-          // Add active class after a slight delay for animation
+         
           setTimeout(() => {
             modal.classList.add('active');
           }, 10);
@@ -407,7 +407,7 @@
         modal.classList.remove('active');
         setTimeout(() => {
           modal.style.display = "none";
-        }, 300); // Match transition duration
+        }, 300); 
       });
 
       window.addEventListener("click", function(e) {
@@ -431,7 +431,7 @@
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
           window.scrollTo({
-            top: targetElement.offsetTop - 80, // Adjusted for navbar height
+            top: targetElement.offsetTop - 80, 
             behavior: 'smooth'
           });
         }
@@ -439,10 +439,10 @@
     });
   </script>
   
-  <!-- Fix Hero Buttons Script -->
+  
   <script src="fix-hero.js"></script>
   
-  <!-- Advanced animations -->
+  
   <script src="animations.js"></script>
 </body>
 </html>
