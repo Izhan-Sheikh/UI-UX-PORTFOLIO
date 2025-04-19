@@ -365,12 +365,7 @@ body {
   color: var(--dark);
 }
 
-.section-subtitle {
-  text-align: center;
-  color: var(--text-light);
-  font-size: 1.1rem;
-  margin-bottom: 60px;
-}
+
 
 .about-content {
   display: flex;
